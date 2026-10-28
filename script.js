@@ -1,42 +1,58 @@
+// ================= MOBILE MENU =================
 
- // Mobile navigation menu
 const menuButton = document.getElementById("menuButton");
 const navLinks = document.getElementById("navLinks");
 
-if (menuButton && navLinks) {
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.setAttribute("aria-label", "Toggle navigation menu");
+menuButton.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+});
 
-    menuButton.addEventListener("click", () => {
-        const isOpen = navLinks.classList.toggle("open");
-        menuButton.setAttribute("aria-expanded", String(isOpen));
-        menuButton.textContent = isOpen ? "✕" : "☰";
+
+// ================= CLOSE MENU AFTER CLICK =================
+
+const links = document.querySelectorAll("#navLinks a");
+
+links.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
     });
 
-    // Close the menu after selecting a navigation link.
-    navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-            navLinks.classList.remove("open");
-            menuButton.setAttribute("aria-expanded", "false");
-            menuButton.textContent = "☰";
+});
+
+
+// ================= SCROLL ANIMATION =================
+
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(
+    function (entries) {
+
+        entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+
         });
-    });
-}
 
-// Highlight the navigation link for the section currently being viewed.
-const sections = document.querySelectorAll("main section, body > section");
-const sectionLinks = document.querySelectorAll("#navLinks a");
+    },
+    {
+        threshold: 0.15
+    }
+);
 
-if ("IntersectionObserver" in window && sections.length && sectionLinks.length) {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            sectionLinks.forEach((link) => {
-                const matches = link.getAttribute("href") === `#${entry.target.id}`;
-                link.classList.toggle("active", matches);
-            });
-        });
-    }, { rootMargin: "-30% 0px -60% 0px" });
+sections.forEach(function (section) {
+    observer.observe(section);
+});
 
-    sections.forEach((section) => observer.observe(section));
+
+// ================= CURRENT YEAR =================
+
+const footerText = document.querySelector("footer p");
+
+if (footerText) {
+    footerText.innerHTML =
+        "© " + new Date().getFullYear() +
+        " Suhas R C. All Rights Reserved.";
 }
