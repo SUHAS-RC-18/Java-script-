@@ -208,19 +208,19 @@ header {
 }
 
 .hero-image {
-    flex: 0 0 300px;
+    flex: 0 0 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .hero-image img {
-    width: 280px;
-    height: 280px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 50%;
     border: 7px solid var(--white);
-    box-shadow: 0 12px 35px rgba(37, 99, 235, 0.18);
+    box-shadow: 0 12px 35px rgba(37, 99, 100, 0.18);
 }
 
 /* =========================
