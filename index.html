@@ -1,35 +1,36 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Suhas R C | Portfolio</title>
 
+    <meta name="description" content="Suhas R C's personal portfolio showcasing technical skills, projects, and education.">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
-    <nav>
-        <div class="nav-container">
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar container" aria-label="Main navigation">
 
-            <div class="logo">
-                Suhas<span>.</span>
-            </div>
+            <a href="#home" class="logo">Suhas<span>.</span></a>
 
             <button
-                id="menuButton"
                 class="menu-button"
-                aria-label="Toggle navigation"
-                aria-expanded="false">
+                id="menuButton"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks">
                 ☰
             </button>
 
-            <ul id="navLinks">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -37,396 +38,252 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
-        </div>
-    </nav>
+        </nav>
+    </header>
 
 
-    <!-- ================= HOME ================= -->
-    <section id="home" class="hero">
+    <main>
 
-        <div class="container hero-container">
+        <!-- Hero Section -->
+        <section class="hero section" id="home">
 
-            <div class="hero-content">
+            <div class="container hero-content">
 
-                <p class="small-title">
-                    PROGRAMMING &amp; WEB DEVELOPMENT
-                </p>
+                <div class="hero-text">
 
-                <h1>
-                    Hi, I'm <span>Suhas R C</span>
-                </h1>
+                    <p class="intro">HELLO, I'M</p>
 
-                <h2>
-                    Undergraduate Student &amp; Aspiring Developer
-                </h2>
+                    <h1>Suhas R C</h1>
 
-                <p>
-                    I enjoy programming and developing responsive,
-                    interactive websites using modern web technologies.
-                    Welcome to my portfolio.
-                </p>
+                    <h2>Computer Science Student &amp; Aspiring Developer</h2>
 
-                <div class="buttons">
+                    <p class="hero-description">
+                        I am a Computer Science student passionate about
+                        programming, web development, and learning new
+                        technologies. I enjoy building projects and improving
+                        my technical skills to solve real-world problems.
+                    </p>
 
-                    <a href="#skills" class="btn primary-btn">
-                        Explore Skills
-                    </a>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            View My Projects
+                        </a>
 
-                    <a
-                        href="mailto:suhasrc18@gmail.com"
-                        class="btn secondary-btn">
-                        Email Me
+                        <a href="#contact" class="btn btn-outline">
+                            Contact Me
+                        </a>
+                    </div>
+
+                    <div class="social-links">
+                        <a
+                            href="https://github.com/SUHAS-RC-18"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            GitHub
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/suhas-r-c-0ba63343b"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            LinkedIn
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <!-- Small Profile Image -->
+                <div class="hero-image">
+
+                    <div class="image-frame">
+                        <img
+                            src="profile.png"
+                            alt="Suhas R C profile photo"
+                            class="profile-photo">
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Skills Section -->
+        <section class="section section-light" id="skills">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="section-label">WHAT I KNOW</p>
+                    <h2>Technical Skills</h2>
+                    <p>Technologies and programming languages I work with.</p>
+                </div>
+
+                <div class="skills-grid">
+
+                    <article class="skill-card">
+                        <div class="skill-icon">01</div>
+                        <h3>Programming Languages</h3>
+                        <div class="tags">
+                            <span>Java</span>
+                            <span>Python</span>
+                            <span>C</span>
+                            <span>C++</span>
+                        </div>
+                    </article>
+
+                    <article class="skill-card">
+                        <div class="skill-icon">02</div>
+                        <h3>Web Development</h3>
+                        <div class="tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Projects Section -->
+        <section class="section" id="projects">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="section-label">MY WORK</p>
+                    <h2>Projects</h2>
+                    <p>A selection of my academic and development work.</p>
+                </div>
+
+                <div class="projects-grid">
+
+                    <article class="project-card">
+
+                        <div class="project-number">PROJECT 01</div>
+
+                        <h3>Payment Management System</h3>
+
+                        <p>
+                            A web-based project focused on organizing and
+                            managing payment-related information through
+                            a simple and user-friendly interface.
+                        </p>
+
+                        <div class="tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Education Section -->
+        <section class="section section-light" id="education">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="section-label">MY BACKGROUND</p>
+                    <h2>Education</h2>
+                </div>
+
+                <article class="education-card">
+
+                    <div class="education-marker"></div>
+
+                    <div>
+                        <p class="education-label">UNDERGRADUATE</p>
+
+                        <h3>B.Sc. Computer Science</h3>
+
+                        <p class="college-name">
+                            KG College of Arts and Science
+                        </p>
+
+                        <p>
+                            Building a foundation in computer science,
+                            programming, and software development.
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section class="section contact-section" id="contact">
+
+            <div class="container contact-content">
+
+                <div class="section-heading">
+                    <p class="section-label">GET IN TOUCH</p>
+                    <h2>Contact Me</h2>
+
+                    <p>
+                        Have a project idea or want to connect?
+                        Feel free to reach out.
+                    </p>
+                </div>
+
+                <a
+                    class="btn btn-primary"
+                    href="mailto:suhasrc18@gmail.com">
+                    Send Me an Email
+                </a>
+
+                <div class="contact-links">
+
+                    <a href="mailto:suhasrc18@gmail.com">
+                        suhasrc18@gmail.com
                     </a>
 
                     <a
                         href="https://github.com/SUHAS-RC-18"
                         target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn secondary-btn">
-                        GitHub
+                        rel="noopener noreferrer">
+                        GitHub Profile
                     </a>
 
                     <a
                         href="https://www.linkedin.com/in/suhas-r-c-0ba63343b"
                         target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn linkedin-btn">
-                        LinkedIn
+                        rel="noopener noreferrer">
+                        LinkedIn Profile
                     </a>
 
                 </div>
 
             </div>
+        </section>
+
+    </main>
 
 
-            <!-- PROFILE IMAGE -->
-            <div class="profile-container">
-
-                <div class="profile-box">
-
-                    <img
-                        src="profile.png"
-                        alt="Suhas R C profile photo"
-                        class="profile-image">
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= TECHNICAL SKILLS ================= -->
-    <section id="skills">
-
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-
-            <div class="section-title">
-
-                <h2>
-                    Technical <span>Skills</span>
-                </h2>
-
-                <p>
-                    My programming knowledge and technical expertise
-                </p>
-
-            </div>
-
-
-            <!-- 01. PROGRAMMING LANGUAGES -->
-            <div class="skills-category">
-
-                <h3 class="skills-subheading">
-                    <span>01.</span> Programming Languages
-                </h3>
-
-                <p class="skills-description">
-                    Programming languages I know
-                </p>
-
-                <div class="skills-container">
-
-                    <div class="skill-card">
-                        <div class="skill-icon">☕</div>
-                        <h3>Java</h3>
-                        <p>Object-Oriented Programming</p>
-                    </div>
-
-                    <div class="skill-card">
-                        <div class="skill-icon">🐍</div>
-                        <h3>Python</h3>
-                        <p>General-Purpose Programming</p>
-                    </div>
-
-                    <div class="skill-card">
-                        <div class="skill-icon">💻</div>
-                        <h3>C</h3>
-                        <p>Structured Programming</p>
-                    </div>
-
-                    <div class="skill-card">
-                        <div class="skill-icon">⚙️</div>
-                        <h3>C++</h3>
-                        <p>Object-Oriented Programming</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- 02. WEB DEVELOPMENT TECHNOLOGIES -->
-            <div class="skills-category">
-
-                <h3 class="skills-subheading">
-                    <span>02.</span> Web Development Technologies
-                </h3>
-
-                <p class="skills-description">
-                    Technologies used to build this portfolio
-                </p>
-
-                <div class="skills-container">
-
-                    <div class="skill-card">
-                        <div class="skill-icon">🌐</div>
-                        <h3>HTML5</h3>
-                        <p>Website Structure</p>
-                    </div>
-
-                    <div class="skill-card">
-                        <div class="skill-icon">🎨</div>
-                        <h3>CSS3</h3>
-                        <p>Styling and Responsive Design</p>
-                    </div>
-
-                    <div class="skill-card">
-                        <div class="skill-icon">⚡</div>
-                        <h3>JavaScript</h3>
-                        <p>Interactivity and Functionality</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= PROJECTS ================= -->
-    <section id="projects">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <h2>
-                    My <span>Projects</span>
-                </h2>
-
-                <p>
-                    Projects I have worked on
-                </p>
-
-            </div>
-
-            <div class="projects-container">
-
-                <div class="project-card">
-
-                    <div class="project-icon">
-                        💳
-                    </div>
-
-                    <h3>
-                        Payment Management System
-                    </h3>
-
-                    <p>
-                        A Payment Management System designed to
-                        organize payment records, track transactions,
-                        and manage payment details efficiently.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= EDUCATION ================= -->
-    <section id="education">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <h2>
-                    My <span>Education</span>
-                </h2>
-
-                <p>
-                    Academic background
-                </p>
-
-            </div>
-
-            <div class="education-box">
-
-                <div class="education-icon">
-                    🎓
-                </div>
-
-                <div class="education-content">
-
-                    <h3>
-                        Undergraduate Student
-                    </h3>
-
-                    <h4>
-                        KG College of Arts and Science
-                    </h4>
-
-                    <p>
-                        I'm currently pursuing my undergraduate
-                        degree at KG College of Arts and Science.
-                    </p>
-
-                    <p>
-                        <strong>Degree:</strong>
-                        B.Sc. Computer Science
-                    </p>
-
-                    <p>
-                        <strong>Year:</strong>
-                        II Year
-                    </p>
-
-                    <p>
-                        <strong>Expected Graduation:</strong>
-                        2028
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= CONTACT ================= -->
-    <section id="contact" class="contact">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <h2>
-                    Contact <span>Me</span>
-                </h2>
-
-                <p>
-                    Let's connect
-                </p>
-
-            </div>
-
-            <p class="contact-text">
-                Feel free to connect with me through Gmail,
-                GitHub or LinkedIn.
+            <p id="copyright">
+                &copy; Suhas R C. All Rights Reserved.
             </p>
-
-            <div class="contact-links">
-
-                <!-- EMAIL -->
-                <a
-                    href="mailto:suhasrc18@gmail.com"
-                    class="contact-card">
-
-                    <span class="contact-icon">✉️</span>
-
-                    <div>
-                        <strong>Email</strong>
-                        <p>suhasrc18@gmail.com</p>
-                    </div>
-
-                </a>
-
-
-                <!-- GITHUB -->
-                <a
-                    href="https://github.com/SUHAS-RC-18"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="contact-card">
-
-                    <span class="contact-icon">🐙</span>
-
-                    <div>
-                        <strong>GitHub</strong>
-                        <p>SUHAS-RC-18</p>
-                    </div>
-
-                </a>
-
-
-                <!-- LINKEDIN -->
-                <a
-                    href="https://www.linkedin.com/in/suhas-r-c-0ba63343b"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="contact-card">
-
-                    <span class="contact-icon">💼</span>
-
-                    <div>
-                        <strong>LinkedIn</strong>
-                        <p>Suhas R C</p>
-                    </div>
-
-                </a>
-
-            </div>
-
         </div>
-
-    </section>
-
-
-    <!-- ================= FOOTER ================= -->
-    <footer>
-
-        <p id="copyright">
-            © 2026 Suhas R C. All Rights Reserved.
-        </p>
-
-        <p>
-            Designed using HTML, CSS &amp; JavaScript
-        </p>
-
     </footer>
 
 
-    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
 
 </body>
-
 </html>
 ```
