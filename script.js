@@ -1,58 +1,52 @@
-// ================= MOBILE MENU =================
+```javascript
+// ================= MOBILE NAVIGATION =================
 
 const menuButton = document.getElementById("menuButton");
 const navLinks = document.getElementById("navLinks");
 
-menuButton.addEventListener("click", function () {
-    navLinks.classList.toggle("active");
-});
+if (menuButton && navLinks) {
+
+    menuButton.addEventListener("click", function () {
+
+        const isOpen = navLinks.classList.toggle("active");
+
+        menuButton.setAttribute("aria-expanded", isOpen);
+
+    });
+
+}
 
 
 // ================= CLOSE MENU AFTER CLICK =================
 
-const links = document.querySelectorAll("#navLinks a");
+if (navLinks && menuButton) {
 
-links.forEach(function (link) {
+    const navigationLinks = navLinks.querySelectorAll("a");
 
-    link.addEventListener("click", function () {
-        navLinks.classList.remove("active");
-    });
+    navigationLinks.forEach(function (link) {
 
-});
+        link.addEventListener("click", function () {
 
+            navLinks.classList.remove("active");
 
-// ================= SCROLL ANIMATION =================
-
-const sections = document.querySelectorAll("section");
-
-const observer = new IntersectionObserver(
-    function (entries) {
-
-        entries.forEach(function (entry) {
-
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-            }
+            menuButton.setAttribute("aria-expanded", "false");
 
         });
 
-    },
-    {
-        threshold: 0.15
-    }
-);
+    });
 
-sections.forEach(function (section) {
-    observer.observe(section);
-});
+}
 
 
-// ================= CURRENT YEAR =================
+// ================= AUTOMATIC FOOTER YEAR =================
 
-const footerText = document.querySelector("footer p");
+const copyright = document.getElementById("copyright");
 
-if (footerText) {
-    footerText.innerHTML =
+if (copyright) {
+
+    copyright.textContent =
         "© " + new Date().getFullYear() +
         " Suhas R C. All Rights Reserved.";
+
 }
+```
