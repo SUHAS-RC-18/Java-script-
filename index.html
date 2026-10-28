@@ -1,360 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+// ================= MOBILE MENU =================
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+const menuButton = document.getElementById("menuButton");
+const navLinks = document.getElementById("navLinks");
 
-    <title>Suhas R C | JavaScript Portfolio</title>
+menuButton.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+});
 
-    <link rel="stylesheet" href="style.css">
-</head>
 
-<body>
+// ================= CLOSE MENU AFTER CLICK =================
 
-    <!-- ================= NAVBAR ================= -->
+const links = document.querySelectorAll("#navLinks a");
 
-    <nav>
-        <div class="nav-container">
+links.forEach(function (link) {
 
-            <div class="logo">
-                Suhas<span>.</span>
-            </div>
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+    });
 
-            <button id="menuButton" class="menu-button">
-                ☰
-            </button>
+});
 
-            <ul id="navLinks">
-                <li>
-                    <a href="#home">Home</a>
-                </li>
 
-                <li>
-                    <a href="#skills">Skills</a>
-                </li>
+// ================= SCROLL ANIMATION =================
 
-                <li>
-                    <a href="#education">Education</a>
-                </li>
+const sections = document.querySelectorAll("section");
 
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-            </ul>
+const observer = new IntersectionObserver(
+    function (entries) {
 
-        </div>
-    </nav>
+        entries.forEach(function (entry) {
 
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
 
-    <!-- ================= HOME ================= -->
+        });
 
-    <section id="home" class="hero">
+    },
+    {
+        threshold: 0.15
+    }
+);
 
-        <div class="container hero-container">
+sections.forEach(function (section) {
+    observer.observe(section);
+});
 
-            <div class="hero-content">
 
-                <p class="small-title">
-                    JAVASCRIPT DEVELOPER PORTFOLIO
-                </p>
+// ================= CURRENT YEAR =================
 
-                <h1>
-                    Hi, I'm
-                    <span>Suhas R C</span>
-                </h1>
+const footerText = document.querySelector("footer p");
 
-                <h2>
-                    JavaScript Developer &
-                    Web Development Student
-                </h2>
-
-                <p>
-                    I build clean, responsive and
-                    interactive websites using
-                    HTML, CSS and JavaScript.
-                    Welcome to my professional portfolio.
-                </p>
-
-                <div class="buttons">
-
-                    <a href="#skills" class="btn primary-btn">
-                        Explore Skills
-                    </a>
-
-                    <a href="mailto:suhasrc18@gmail.com"
-                       class="btn secondary-btn">
-                        Email Me
-                    </a>
-
-                    <a href="https://github.com/SUHAS-RC-18"
-                       target="_blank"
-                       class="btn secondary-btn">
-                        GitHub
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/suhas-r-c-0ba63343b"
-                       target="_blank"
-                       class="btn linkedin-btn">
-                        LinkedIn
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="profile-container">
-
-                <div class="profile-box">
-
-                    <img
-                        src="profile.png"
-                        alt="Suhas R C Profile Photo"
-                        class="profile-image"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= SKILLS ================= -->
-
-    <section id="skills">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <h2>
-                    Technical <span>Skills</span>
-                </h2>
-
-                <p>
-                    Technologies I use
-                </p>
-
-            </div>
-
-
-            <div class="skills-container">
-
-                <div class="skill-card">
-
-                    <div class="skill-icon">
-                        🌐
-                    </div>
-
-                    <h3>HTML5</h3>
-
-                    <p>
-                        Semantic web structure
-                    </p>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <div class="skill-icon">
-                        🎨
-                    </div>
-
-                    <h3>CSS3</h3>
-
-                    <p>
-                        Responsive web design
-                    </p>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <div class="skill-icon">
-                        ⚡
-                    </div>
-
-                    <h3>JavaScript</h3>
-
-                    <p>
-                        Interactive web applications
-                    </p>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <div class="skill-icon">
-                        🐙
-                    </div>
-
-                    <h3>GitHub</h3>
-
-                    <p>
-                        Version control
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= EDUCATION ================= -->
-
-    <section id="education">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <h2>
-                    My <span>Education</span>
-                </h2>
-
-                <p>
-                    Academic background
-                </p>
-
-            </div>
-
-
-            <div class="education-box">
-
-                <div class="education-icon">
-                    🎓
-                </div>
-
-                <div>
-
-                    <h3>
-                        Computer Science Student
-                    </h3>
-
-                    <p>
-                        Developing knowledge in
-                        JavaScript, web development,
-                        programming fundamentals and
-                        modern technologies.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= CONTACT ================= -->
-
-    <section id="contact" class="contact">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <h2>
-                    Contact <span>Me</span>
-                </h2>
-
-                <p>
-                    Let's connect
-                </p>
-
-            </div>
-
-
-            <p class="contact-text">
-                Feel free to connect with me through
-                Gmail, GitHub or LinkedIn.
-            </p>
-
-
-            <div class="contact-links">
-
-                <a href="mailto:suhasrc18@gmail.com"
-                   class="contact-card">
-
-                    <span class="contact-icon">
-                        ✉️
-                    </span>
-
-                    <div>
-                        <strong>Email</strong>
-                        <p>suhasrc18@gmail.com</p>
-                    </div>
-
-                </a>
-
-
-                <a href="https://github.com/SUHAS-RC-18"
-                   target="_blank"
-                   class="contact-card">
-
-                    <span class="contact-icon">
-                        🐙
-                    </span>
-
-                    <div>
-                        <strong>GitHub</strong>
-                        <p>SUHAS-RC-18</p>
-                    </div>
-
-                </a>
-
-
-                <a href="https://www.linkedin.com/in/suhas-r-c-0ba63343b"
-                   target="_blank"
-                   class="contact-card">
-
-                    <span class="contact-icon">
-                        💼
-                    </span>
-
-                    <div>
-                        <strong>LinkedIn</strong>
-                        <p>Suhas R C</p>
-                    </div>
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <p>
-            © 2026 Suhas R C. All Rights Reserved.
-        </p>
-
-        <p>
-            Designed using HTML, CSS & JavaScript
-        </p>
-
-    </footer>
-
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-
-</body>
-
-</html>
+if (footerText) {
+    footerText.innerHTML =
+        "© " + new Date().getFullYear() +
+        " Suhas R C. All Rights Reserved.";
+}
